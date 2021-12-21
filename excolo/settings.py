@@ -33,6 +33,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['localhost','127.0.0.1', 'www.excoloholdings.co.za', 'excoloholdings.co.za']
 
 
+
 # Application definition
 
 INSTALLED_APPS = [

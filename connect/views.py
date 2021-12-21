@@ -20,7 +20,7 @@ def quote(request):
         quote_form = QuoteForm(request.POST)
         if quote_form.is_valid():
             quote_form.save()
-            return redirect('/')
+            return redirect('message2')
         else:
             messages.info(request, "Enter valid information")
             return redirect('/')
@@ -32,7 +32,7 @@ def message(request):
         message_form = MessageForm(request.POST)
         if message_form.is_valid():
             message_form.save()
-            return redirect('/')
+            return redirect('message1')
         else:
             messages.info(request, "Enter valid information")
             return redirect('/')
@@ -44,9 +44,20 @@ def booking(request):
         booking_form = BookingForm(request.POST)
         if booking_form.is_valid():
             booking_form.save()
-            return redirect('/')
+            return redirect('message3')
         else:
             messages.info(request, "Enter valid information")
             return redirect('/')
     else:
         pass
+
+def message1(request):
+    return render(request, "message.html")
+
+def message2(request):
+    return render(request, "quotemessage.html")
+
+def message3(request):
+    return render(request, "bookmessage.html")
+
+
